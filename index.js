@@ -9,6 +9,9 @@ var router = {
 
   navigate: function (url) {
     return function () {
+      if (url === 'back') {
+        return window.history.back(); 
+      }
       page(url); 
     };
   },

@@ -42,7 +42,7 @@ Instead of having one transition for each new url/page this router generates a `
 
 If we take the example from above and you visit `/` you go from transition name `''` -> `'none'`. The router will generate the `transitionName: '.none'`. Next it will check if `'.none-enter'` is defined in css. If it's not it will set `transitionEnter: false` same happens for `'.none-leave`. 
 
-So you end up with following `CSSTransitionGroup` config if no css classes are defined:
+The `CSSTransitionGroup` could have the following props:
 
 ```js
 { 
@@ -52,7 +52,7 @@ So you end up with following `CSSTransitionGroup` config if no css classes are d
 }
 ```
 
-If you go from `/` to `/page2` `transitionName: '.none-overlay'` is used. It will again check if you defined `.none-overlay-enter` and `.none-overlay-leave` and set `enter` and `leave` to true or false depending if those css classes are defined.
+If you go from `/` to `/page2` `transitionName: '.none-overlay'` is used:
 
 ```js
 { 
@@ -62,7 +62,7 @@ If you go from `/` to `/page2` `transitionName: '.none-overlay'` is used. It wil
 }
 ```
 
-The css for going from none -> overlay and overlay -> none could look something like the following:
+The css for going from none -> overlay and overlay -> none could be the following:
 
 ```css
 @-webkit-keyframes none {
